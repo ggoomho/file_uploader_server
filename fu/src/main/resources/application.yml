@@ -1,0 +1,21 @@
+spring:
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        url: jdbc:mariadb://${DB_IP}:${DB_PORT}/${DB_NAME}?createDatabaseIfNotExist=true
+        username: ${DB_USERNAME}
+        password: ${DB_PASSWORD}
+    # hikari:
+    #   data-source-properties:
+    #     rewriteBatchedStatements: true
+    jpa:
+        properties:
+            hibernate:
+                jdbc:
+                    batch_size: 1000
+        database-platform: org.hibernate.dialect.MariaDB106Dialect
+        hibernate:
+            ddl-auto: create
+    servlet:
+        multipart:
+            max-file-size: 10MB
+

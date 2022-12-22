@@ -1,0 +1,18 @@
+spring:
+    datasource:
+        driver-class-name: org.mariadb.jdbc.Driver
+        url: jdbc:mariadb://localhost:3306/chols_fu_test?createDatabaseIfNotExist=true
+        username: root
+        password: 1234
+    jpa:
+        properties:
+            hibernate:
+                jdbc:
+                    batch_size: 1000
+        database-platform: org.hibernate.dialect.MariaDB106Dialect
+        hibernate:
+            ddl-auto: create
+    servlet:
+        multipart:
+            max-file-size: 10MB
+
